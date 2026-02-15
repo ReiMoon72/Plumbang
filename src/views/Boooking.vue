@@ -107,7 +107,7 @@ export default {
         <label>Describe the Problem</label>
         <input type="text" v-model="probelm" />
         <label>Select a Time</label>
-        <input type="time" v-model="time" />
+        <input type="input" v-model="time" />
         <button class="checkBtn" @click="checkBtn">Check Out</button>
       </form>
     </div>
