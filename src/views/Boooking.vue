@@ -1,4 +1,5 @@
 <script>
+
 export default {
   data() {
     return {
@@ -11,6 +12,7 @@ export default {
       probelm: "",
       time: "",
       receipt: false,
+      orderArea: true,
       serviceMap: {
         EP: { name: "Emergency Plumbing", price: 1500 },
         LR: { name: "Leak Repair", price: 500 },
@@ -42,12 +44,12 @@ export default {
         alert("Please Include a @ in your Email");
       } else {
         console.log("This is Valid");
-      }
-
+      } 
       this.receipt = true;
+
     },
     submitBtn() {
-      this.submitBtn = alert("Your Order has been places");
+      this.submitBtn = console.log("Your Order has been places");
 
       this.emial = "";
       this.fullname = "";
@@ -59,6 +61,7 @@ export default {
       this.time = "";
 
       this.receipt = false;
+
     },
   },
 };
@@ -72,7 +75,7 @@ export default {
     </div>
 
     <!--Form Area-->
-    <div class="form-section">
+    <div class="form-section" v-show="orderArea">
       <form @submit.prevent class="form-area">
         <label>Full name: </label>
         <input type="text" v-model="fullname" />
